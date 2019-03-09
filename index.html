@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Random Snarky Quote Generator</title>
+  <link rel="stylesheet" href="stylesheet.css" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class="container-fluid bg-gradient-black h-100">
+  <div class="row pt-5 pb-5">
+    <div class="col-xl">
+      <h1 class="text-center text-white display-4">Random Snarky Quotes Generator</h1> 
+       <h3 class="text-center text-warning">
+        For the days you really need a smack in the face</h3>
+     </div>
+   </div>
+    <div class="row">
+      
+                <div class="col-md-1">
+                </div>
+      
+      <div class="col-10 border border-warning rounded rounded-lg bg-secondary shadow">
+                  <i class="fas fa-quote-left fa-4x"></i>
+        
+           <div class="wrapper" id="quote-box">
+                 <div class="row mh-50 px-4">
+                   <div class="col-md h-75 pb-5">
+        <blockquote style="height: 150px;" class="blockquote"><p id="text" class="h2 text-white text-center"></p></blockquote>
+          <footer class="blockquote-footer float-right"><span class="font-weight-bold text-warning h5" id="author"></span>
+            <cite><span class="text-light font-italic text-uppercase h6" id="movie"></span></cite>
+                     </footer>
+          
+          </div>
+                   
+             <div class="w-100"></div>
+                   
+              <div class="col h-25 pb-3">
+                <div class="text-center">
+          <button class="btn btn-lg bg-info text-center text-white" onClick="getQuote()" id="new-quote"><strong>You Got Anymore O' Them . . .<br /> New Quotes?</strong></button>
+              </div>
+                   </div>
+             
+             <div class="col h-25 pb-3">
+               <div class="text-center">
+          <a id="tweet-quote" onClick="tweetBtn()" href="https://twitter.com/intent/tweet" class="btn btn-lg bg-primary text-center text-white"><strong>Tweet It,<br/> Tweet It Good!&ensp;<i class="fab fa-lg fa-twitter text-white"></strong></i></a>
+        </div>
+                   </div>
+                     </div>
+                       </div>
+        <i class="fas fa-quote-right fa-4x "></i>
+      </div>
+      
+      <div class="col-md-2">
+      </div>
+    </div>
+  <div class="row pt-5 pb-5 h-25">
+  </div>
+        </div>
+
+<script>
+  const quotesList = [
+  {
+    text: 'Don\'t let it get to you. I always feel like screaming when you walk into a room. In fact, so do most people.',
+    author: 'Greg LeStrade',
+    movie: 'Sherlock'
+  },
+  {
+  text: 'I always hear \'punch me in the face\' when you\'re speaking, but it\'s usually sub-text.',
+    author: 'John Watson',
+    movie: 'Sherlock'
+  },
+  {
+    text: 'Anderson, don’t talk out loud. You lower the IQ of the whole street.',
+    author: 'Sherlock Holmes',
+    movie: 'Sherlock'
+  },
+  {
+    text: 'Johnny, I apologize. I forgot you were there. You may go now.',
+    author: 'Doc Holliday',
+    movie: 'Tombstone'
+  },
+  {
+    text: 'Do I get bonus points if I act like I care?',
+    author: 'Dr. Greg House',
+    movie: 'House'
+  },
+  {
+    text: 'You know what they say. When life gives you lemons, chuck \'em at people.',
+    author: 'Dr. Cal Lightman',
+    movie: 'Lie to Me'
+  }
+];
+
+function getQuote() {
+  let random = Math.floor(Math.random() * quotesList.length);
+  let currentQuote = {
+    text: quotesList[random].text,
+    author: quotesList[random].author,
+    movie: quotesList[random].movie
+  };
+  document.getElementById('text').innerHTML = currentQuote.text;
+  document.getElementById('author').innerHTML = "— " + currentQuote.author;
+  document.getElementById('movie').innerHTML = " in " + currentQuote.movie;
+};
+  
+  function tweetBtn() {
+    let random = Math.floor(Math.random() * quotesList.length);
+    let currentQuote = {
+    text: quotesList[random].text,
+    author: quotesList[random].author,
+    movie: quotesList[random].movie
+  };
+    let url = "https://twitter.com/intent/tweet?text=" + currentQuote.text + '— ' + currentQuote.author + ' in ' + currentQuote.movie;
+    document.getElementById('tweet-quote').setAttribute( 'href', url );
+  };
+  
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+
+getQuote();
+</script>
+  
+  </body>
+</html>

@@ -1,8 +1,12 @@
 # FCC Snarky Quote Generator
 
-This is my finished project for the FreeCodeCamp Javascript Libraries test projects. [From the FCC website:](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine/)
+This is my finished project for the FreeCodeCamp Javascript Libraries test projects. 
 
-###Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/qRZeGZ.
+***
+
+[From the FCC website:](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine/)
+
+### Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/qRZeGZ.
 
 Fulfill the below user stories and get all of the tests to pass. Give it your own personal style.
 
@@ -20,6 +24,12 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 +User Story #10: I can tweet the current quote by clicking on the #tweet-quote a element. This a element should include the "twitter.com/intent/tweet" path in it's href attribute to tweet the current quote.
 +User Story #11: The #quote-box wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
 
-##My Process
+*** 
+
+## My Process
 
 I opted to use Bootstrap CSS, not only to speed up the styling, but to also give me practice with that library. I decided on snarky quotes from some of my favorite movies and TV shows. With that in mind, I also added a third variable, the source, to display on the front. I hope in the next month to also add a toggled form to allow visitors to add their own favorite quotes to the page. 
+
+[# Visit the finished project page](https://rockstarcreativestudio.github.io/FCC-Snarky-Quote-Generator/index.html)
+
+
